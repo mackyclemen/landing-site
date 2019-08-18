@@ -13,6 +13,13 @@
 }
 
 /* Global stylesheet */
+
+#container {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+}
+
 #header {
 	box-sizing: border-box;
 }
@@ -43,15 +50,14 @@
 	text-align: center;
 }
 
+
+
 /* Device specific stylesheets */
 /* Phone spec */
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 720px) and (orientation: portrait) {
 
 	/* the whole container */
 	#container {
-		position: fixed;
-		height: 100%;
-		width: 100%;
 		display: flex;
 		overflow: hidden;
 		flex-flow: column;
@@ -84,7 +90,6 @@
 	#content {
 		flex: 1;
 		overflow: auto;
-		
 		display: flex;
 		flex-flow: column;
 		justify-content: center;
@@ -99,15 +104,29 @@
 	}
 }
 
-/* PC Spec */
-@media only screen and (min-width: 720px) {
-	
-	/* the whole container */
-	#container {
-		position: fixed;
-		height: 100%;
-		width: 100%;
+
+/* Phone-Landscape spec */
+@media only screen and (max-width: 850px) and (orientation: landscape) {
+
+	#header .nav {
+		position: relative;
+		float: left;
 	}
+
+	.nav li {
+		display: inline-block;
+	}
+
+	/* Footer */
+	#footer {
+		position: absolute;
+		bottom: 0;
+	}
+}
+
+
+/* PC Spec */
+@media only screen and (min-width: 450px){
 	
 	/* Header */
 	#header {
@@ -140,7 +159,7 @@
 		position: relative;
 		float: right;
 	}
-	
+
 	#content {
 		position: absolute;
 		left: 50%;
