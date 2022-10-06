@@ -1,5 +1,5 @@
 /* Import statements here*/
-@import '/css/base-landing.css';
+@import './base-landing.css';
 
 /* Global stylesheet */
 * {
